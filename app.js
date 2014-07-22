@@ -9,6 +9,8 @@ angular.module('demo', [])
       scope.content = {
         toggleEdit: function() {
           //trying to figureout jquery lite
+          //do this without binding to p?
+          //what if wanna reuse directive in other context?
           content = element.find('p');
           button = element.find('button');
           //wtf why 'false' and not false
