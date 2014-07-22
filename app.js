@@ -10,10 +10,17 @@ angular.module('demo', [])
         toggleEdit: function() {
           //trying to figureout jquery lite
           content = element.find('p');
-          console.log(element.find('p').attr('contenteditable'));
-          if (content.attr('contenteditable') == undefined) {
-            content.attr('contenteditable', true)
-          } else { content.attr('contenteditable', false)}
+          button = element.find('button');
+          //wtf why 'false' and not false
+          if (content.attr('contenteditable') === undefined || content.attr('contenteditable') === 'false' ) {
+            content.attr('contenteditable', true);
+            content.addClass('edit');
+            button.text('Save')
+          } else { 
+            content.attr('contenteditable', false)
+            content.removeClass('edit');
+            button.text('Edit')
+          }
         }
       }
     }
